@@ -21,11 +21,12 @@ projects:
   # sort_by options:
   #   - pushed
   #   - stars
-  limit: 6
+  limit: 9
   exclude:
     archived: false
     forks: true
     projects:
+      -samchawla.github.io
     # - repo-name
 
 social_media:
@@ -47,12 +48,21 @@ social_media:
   #youtube: your_username
 
 topics:
-  - name: CSS
-    web_url: https://github.com/topics/css
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
 
-  - name: Web design
+  - name: Python
+    web_url: https://github.com/topics/python
+    image_url: https://user-images.githubusercontent.com/7588716/64905704-e34a2a00-d6f9-11e9-85d1-08768e316da5.png
 
-  - name: Sass
-    web_url: https://github.com/topics/sass
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/sass/sass.png
+  - name: Machine Learning
+    web_url: https://github.com/topics/machine-learning
+    image_url: https://user-images.githubusercontent.com/7588716/64905757-8307b800-d6fa-11e9-948b-5f1db092528d.png
+
+  - name: Git
+    web_url: https://github.com/topics/git
+    image_url: https://raw.githubusercontent.com/libgit2/libgit2sharp/master/square-logo.png
+
+  - name: Data Structures
+    web_url: https://github.com/topics/data-structures
+    image_url: https://user-images.githubusercontent.com/7588716/64905807-075a3b00-d6fb-11e9-8b27-1688930a723c.jpeg
+
+  - name: Web Development
