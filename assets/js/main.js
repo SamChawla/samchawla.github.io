@@ -1,36 +1,37 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- Spotlight Effect ---
-    const cards = document.querySelectorAll('.spotlight-card');
-    const container = document.querySelector('.spotlight-group') || document.body;
+    const spotlightGroups = document.querySelectorAll('.spotlight-group');
 
-    container.addEventListener('mousemove', e => {
-        cards.forEach(card => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    spotlightGroups.forEach((group) => {
+        const cards = group.querySelectorAll('.spotlight-card');
 
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
+        group.addEventListener('mousemove', (event) => {
+            cards.forEach((card) => {
+                const rect = card.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
         });
     });
 
-    // --- Scroll Reveal ---
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: '0px 0px -48px 0px',
+        }
+    );
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        observer.observe(el);
+    document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+        observer.observe(element);
     });
 });
