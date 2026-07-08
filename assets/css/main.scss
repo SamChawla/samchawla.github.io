@@ -96,11 +96,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .windows {
   position: absolute;
   top: 0; left: var(--dock-w); right: 0; bottom: 0;
+  pointer-events: none; /* let clicks fall through to desktop icons; windows re-enable it */
 }
+.windows .window { pointer-events: auto; }
 
 .desktop-hint {
   position: absolute;
   bottom: 14px; left: 50%; transform: translateX(-50%);
+  pointer-events: none;
   margin: 0; padding: 0.4rem 0.9rem;
   font-size: 0.82rem; color: rgba(255, 255, 255, 0.72);
   background: rgba(0, 0, 0, 0.28); border-radius: 999px;

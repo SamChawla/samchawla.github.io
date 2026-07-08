@@ -397,10 +397,13 @@
         e.preventDefault(); COMMANDS.clear();
       }
     });
-    // clicking anywhere in the terminal focuses the input
+    // clicking anywhere in the terminal focuses the input (unless the user is
+    // selecting text to copy — an expanded, non-collapsed selection)
     var tbody = document.querySelector('.term-body');
     if (tbody) tbody.addEventListener('click', function (e) {
-      if (!window.getSelection().toString()) input.focus();
+      if (e.target.closest('a')) return; // let links work
+      var sel = window.getSelection();
+      if (!sel || sel.isCollapsed) { input.focus(); placeCaret(input); }
     });
   }
 
