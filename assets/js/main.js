@@ -291,36 +291,33 @@
       print('<span class="t-green">' + esc(DATA.profile.name) + '</span> — ' + esc(DATA.profile.role));
     },
     neofetch: function () {
-      var art = [
-        '        <span class="t-orange">.-/+oossssoo+/-.</span>',
-        '    <span class="t-orange">`:+ssssssssssssssssss+:`</span>',
-        '  <span class="t-orange">-+ssssssssssssssssssyyssss+-</span>',
-        ' <span class="t-orange">.osssssssssssssssssss</span>dMMMNy<span class="t-orange">sssso.</span>',
-        ' <span class="t-orange">+sssssssssss</span>hdmmNNmmyNMMMMh<span class="t-orange">ssssss+</span>',
-        '<span class="t-orange">ossyNMMMNyMMh</span>ssssssssssssss<span class="t-orange">hmmmh</span>sss.',
-        '<span class="t-orange">+sssshhhyNMMNy</span>ssssssssssssssss<span class="t-orange">yNMMM</span>y',
-        '<span class="t-orange">.sssssssss</span>dMMMNy<span class="t-orange">sssssssssssss</span>hNMMMd<span class="t-orange">s.</span>',
-        ' <span class="t-orange">+sssssssssdmydMMMMMMMMddddyssssssss+</span>',
-        '  <span class="t-orange">-+sssssssssssssssssyyyyssssssss+-</span>',
-        '    <span class="t-orange">`:+ssssssssssssssssss+:`</span>',
-        '        <span class="t-orange">.-/+oossssoo+/-.</span>'
-      ];
       var facts = (DATA.profile.facts || []).map(function (f) {
-        return '<span class="t-green">' + esc(f[0]) + '</span>: ' + esc(f[1]);
-      });
-      var header = ['<span class="t-orange">' + esc(promptUser) + '</span>', '-----------------'];
-      var right = header.concat(facts);
-      if (isTouch) {
-        // Narrow screens: skip the ASCII art, just list the facts.
-        right.forEach(function (r) { print(r); });
+        return '<div class="nf-row"><span class="nf-key">' + esc(f[0]) + '</span> ' + esc(f[1]) + '</div>';
+      }).join('');
+      var infoHead = '<div class="nf-title">' + esc(promptUser) + '</div>' +
+                     '<div class="nf-rule">' + '-'.repeat(promptUser.length) + '</div>';
+
+      if (isTouch) { // Narrow screens: skip the ASCII art, just list the facts.
+        print('<div class="nf-info">' + infoHead + facts + '</div>');
         return;
       }
-      var rows = Math.max(art.length, right.length);
-      for (var i = 0; i < rows; i++) {
-        var l = art[i] || '';
-        var r = right[i] || '';
-        print('<span style="display:inline-block;min-width:38ch">' + l + '</span>' + r);
-      }
+
+      var art =
+        '        .-/+oossssoo+/-.\n' +
+        '    `:+ssssssssssssssssss+:`\n' +
+        '  -+ssssssssssssssssssyyssss+-\n' +
+        ' .osssssssssssssssssssdMMMNysssso.\n' +
+        ' +sssssssssshdmmNNmmyNMMMMhssssss+\n' +
+        'ossyNMMMNyMMhsssssssssssssshmmmhsss.\n' +
+        '+sssshhhyNMMNyssssssssssssssssyNMMMy\n' +
+        '.sssssssssdMMMNysssssssssssssshNMMMds.\n' +
+        ' +sssssssssdmydMMMMMMMMddddyssssssss+\n' +
+        '  -+sssssssssssssssssyyyyssssssss+-\n' +
+        '    `:+ssssssssssssssssss+:`\n' +
+        '        .-/+oossssoo+/-.';
+
+      print('<div class="nf"><pre class="nf-logo">' + art + '</pre>' +
+            '<div class="nf-info">' + infoHead + facts + '</div></div>');
     },
     ls: function () {
       print('<span class="t-blue">about.txt</span>   <span class="t-blue">experience/</span>   <span class="t-blue">projects/</span>   <span class="t-blue">skills/</span>   <span class="t-blue">contact/</span>   resume.pdf');

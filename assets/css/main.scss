@@ -121,33 +121,48 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--u-aubergine);
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
+.boot {
+  background:
+    radial-gradient(900px 600px at 50% 42%, rgba(120, 40, 90, 0.5), transparent 60%),
+    var(--u-aubergine);
+}
 .boot.is-done { opacity: 0; visibility: hidden; }
 .boot-inner { text-align: center; }
-.boot-logo { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; margin-bottom: 2.2rem; }
-.boot-circle {
-  width: 66px; height: 66px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, var(--u-orange-2), var(--u-orange) 60%, #b73a12);
-  box-shadow: 0 0 40px rgba(233, 84, 32, 0.45);
+
+.boot-ring { position: relative; width: 96px; height: 96px; margin: 0 auto 1.6rem; }
+.boot-ring-svg { width: 96px; height: 96px; animation: spin 1.15s cubic-bezier(0.6, 0.15, 0.35, 0.9) infinite; }
+.boot-ring-track { fill: none; stroke: rgba(255, 255, 255, 0.09); stroke-width: 5; }
+.boot-ring-arc {
+  fill: none; stroke: url(#bootgrad); stroke-width: 5; stroke-linecap: round;
+  stroke-dasharray: 150 264; transform-origin: center;
 }
-.boot-name { font-family: var(--mono); font-size: 1.5rem; letter-spacing: 0.06em; color: #f4f4f4; }
-.boot-cursor { animation: blink 1s steps(1) infinite; color: var(--u-orange-2); }
-.boot-spinner { display: inline-flex; gap: 6px; }
-.boot-spinner span {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--u-orange);
-  animation: bootdot 1.2s ease-in-out infinite;
+.boot-badge {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: var(--mono); font-weight: 700; font-size: 1.35rem; letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #ff9d5c, #e95420 45%, #c0398a);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.boot-spinner span:nth-child(2) { animation-delay: 0.12s; }
-.boot-spinner span:nth-child(3) { animation-delay: 0.24s; }
-.boot-spinner span:nth-child(4) { animation-delay: 0.36s; }
-.boot-spinner span:nth-child(5) { animation-delay: 0.48s; }
-.boot-hint { margin-top: 1.4rem; color: #b7b0ab; font-family: var(--mono); font-size: 0.9rem; }
+.boot-name { font-size: 1.35rem; font-weight: 500; letter-spacing: 0.02em; color: #f4f4f4; }
+.boot-progress {
+  width: 220px; height: 4px; border-radius: 999px; margin: 20px auto 12px;
+  background: rgba(255, 255, 255, 0.1); overflow: hidden;
+}
+.boot-progress span {
+  display: block; height: 100%; width: 8%; border-radius: 999px;
+  background: linear-gradient(90deg, #ff9d5c, #e95420 45%, #c0398a);
+  animation: bootfill 2s cubic-bezier(0.5, 0, 0.2, 1) forwards;
+}
+.boot-hint { margin: 0; color: #a79ea6; font-family: var(--mono); font-size: 0.88rem; letter-spacing: 0.02em; }
+.boot-dots::after { content: ''; animation: bootdots 1.4s steps(4, end) infinite; }
 .boot-skip {
   position: absolute; bottom: 26px; right: 30px;
-  color: #b7b0ab; font-size: 0.82rem; padding: 0.4rem 0.8rem;
-  border: 1px solid rgba(255,255,255,0.15); border-radius: 999px;
+  color: #a79ea6; font-size: 0.82rem; padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; background: rgba(255,255,255,0.03);
 }
 .boot-skip:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
-@keyframes bootdot { 0%, 100% { opacity: 0.3; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-6px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes bootfill { 0% { width: 8%; } 70% { width: 82%; } 100% { width: 100%; } }
+@keyframes bootdots { 0% { content: ''; } 25% { content: '.'; } 50% { content: '..'; } 75% { content: '...'; } }
 @keyframes blink { 50% { opacity: 0; } }
 
 /* ============================================================================
@@ -339,6 +354,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .term-body .t-blue { color: var(--term-blue); }
 .term-body .t-muted { color: #9b968f; }
 .term-body a { color: var(--term-blue); text-decoration: underline; }
+
+/* neofetch */
+.nf { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; margin: 4px 0; }
+.nf-logo {
+  margin: 0; font-family: var(--mono); font-size: 0.72rem; line-height: 1.15; font-weight: 700;
+  background: linear-gradient(135deg, #ffb37a 0%, #e95420 42%, #d0407e 78%, #b0439c 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 1px 6px rgba(233, 84, 32, 0.25));
+}
+.nf-info { font-size: 0.92rem; line-height: 1.55; }
+.nf-title {
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff9d5c, #e95420 55%, #d0407e);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.nf-rule { color: #6d5d67; letter-spacing: 1px; margin-bottom: 2px; }
+.nf-key { color: var(--term-green-2); font-weight: 700; }
 
 /* ---- About app ---- */
 .about-body { background: var(--win); padding: 22px 24px; }

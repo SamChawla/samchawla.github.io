@@ -1,13 +1,25 @@
+{% assign boot_parts = site.data.profile.name | split: ' ' %}
+{% capture boot_initials %}{% for part in boot_parts %}{{ part | slice: 0 }}{% endfor %}{% endcapture %}
 <div class="boot" id="boot">
   <div class="boot-inner">
-    <div class="boot-logo" aria-hidden="true">
-      <span class="boot-circle"></span>
-      <span class="boot-name">{{ site.data.profile.name | downcase }}<span class="boot-cursor">_</span></span>
+    <div class="boot-ring" aria-hidden="true">
+      <svg class="boot-ring-svg" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="bootgrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff9d5c"/>
+            <stop offset="0.5" stop-color="#e95420"/>
+            <stop offset="1" stop-color="#c0398a"/>
+          </linearGradient>
+        </defs>
+        <circle class="boot-ring-track" cx="50" cy="50" r="42"/>
+        <circle class="boot-ring-arc" cx="50" cy="50" r="42"/>
+      </svg>
+      <span class="boot-badge">{{ boot_initials | upcase }}</span>
     </div>
-    <div class="boot-spinner" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-    <p class="boot-hint">booting portfolio<span class="boot-dots"></span></p>
+
+    <div class="boot-name">{{ site.data.profile.name }}</div>
+    <div class="boot-progress"><span></span></div>
+    <p class="boot-hint">starting portfolio<span class="boot-dots"></span></p>
   </div>
-  <button class="boot-skip" data-action="skip-boot">Press to skip →</button>
+  <button class="boot-skip" data-action="skip-boot">skip intro →</button>
 </div>
