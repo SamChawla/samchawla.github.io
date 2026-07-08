@@ -1,0 +1,53 @@
+# --- Site identity -----------------------------------------------------------
+title: Sumit S Chawla
+tagline: Technical Lead
+description: >-
+  Technical Lead specializing in Python, FastAPI, and scalable backend systems.
+  A decade of building fast, reliable, cloud-native services and leading teams
+  that ship with confidence.
+url: "https://samchawla.github.io"
+baseurl: ""
+lang: en
+
+# --- Author (used by jekyll-seo-tag) ----------------------------------------
+author:
+  name: Sumit S Chawla
+  email: sam.chawla26@gmail.com
+
+# Social handle for Twitter cards / SEO (leave blank if none)
+twitter:
+  username:
+  card: summary_large_image
+
+# Logo / default social share image (1200x630 recommended)
+logo: /assets/img/og-image.png
+image: /assets/img/og-image.png
+
+# --- Build -------------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+timezone: Asia/Kolkata
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: /feed.xml
+
+# --- Blog listing on the writing include ------------------------------------
+writing_limit: 3
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE.txt
+  - vendor
+  - .vscode
+  - scratchpad

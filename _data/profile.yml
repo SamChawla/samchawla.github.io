@@ -1,0 +1,59 @@
+# Core identity shown in the hero and throughout the site.
+name: Sumit S Chawla
+role: Technical Lead
+# One confident, specific value proposition (the headline).
+headline: >-
+  I build Python backends that stay fast, calm, and reliable at scale.
+# Supporting sentence under the headline.
+summary: >-
+  Technical Lead with 10+ years designing scalable APIs, cloud-native services,
+  and the engineering practices that help teams ship with confidence instead of
+  chaos. Focused on FastAPI architecture, observability, and delivery you can trust.
+location: Remote · India
+avatar: https://avatars.githubusercontent.com/u/7588716?v=4
+username: sam                 # shell username shown in the terminal (sam@portfolio)
+host: portfolio
+
+# Longer bio shown in the About window and `cat about.txt` in the terminal.
+bio:
+  - >-
+    I'm a Technical Lead with over a decade of experience building Python
+    backends that stay fast, calm, and reliable under real-world load.
+  - >-
+    My focus is FastAPI architecture, cloud-native services, observability,
+    and the engineering practices that let teams ship with confidence instead
+    of chaos — clear service boundaries, CI/CD guardrails, and documentation
+    that scales.
+  - >-
+    I've delivered across analytics, security, logistics, and enterprise
+    software, and I care as much about mentoring engineers and running good
+    design reviews as I do about the code itself.
+
+# Quick facts used by the terminal `neofetch` command.
+facts:
+  - [OS, Human v1.0 · Technical Lead]
+  - [Uptime, 10+ years in backend]
+  - [Shell, Python · FastAPI · async]
+  - [Kernel, Microservices · Docker · Kubernetes]
+  - [Packages, PostgreSQL · Azure SQL · Redis]
+  - [Editor, Quality-first execution]
+
+# Primary calls to action in the hero.
+primary_cta:
+  label: Start a conversation
+  url: mailto:sam.chawla26@gmail.com
+secondary_cta:
+  label: View GitHub
+  url: https://github.com/samchawla
+
+# Optional résumé link — leave blank to hide the button.
+resume_url: ""
+
+# Quick stats row under the hero (keep to 3).
+stats:
+  - value: "10+ yrs"
+    label: Backend delivery
+  - value: FastAPI
+    label: Architecture focus
+  - value: CI/CD · K8s
+    label: Cloud-native delivery

@@ -1,0 +1,27 @@
+<section class="window window--skills" id="win-skills" data-window="skills"
+         role="dialog" aria-label="Skills" hidden>
+  <header class="win-titlebar" data-drag-handle>
+    <div class="win-title">{% include appicons.html name="skills" %}<span>Skills — System Settings</span></div>
+    <div class="win-controls">
+      <button class="win-btn win-min" data-win-action="minimize" aria-label="Minimize"></button>
+      <button class="win-btn win-max" data-win-action="maximize" aria-label="Maximize"></button>
+      <button class="win-btn win-close" data-win-action="close" aria-label="Close"></button>
+    </div>
+  </header>
+  <div class="win-body skills-body">
+    <div class="skills-grid">
+      {% for skill in site.data.skills %}
+      <article class="skill-panel">
+        <h3>{{ skill.group }}</h3>
+        <p class="skill-panel-detail">{{ skill.detail }}</p>
+        {% if skill.items %}
+        <ul class="skill-chips">
+          {% for item in skill.items %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        <div class="skill-meter"><span style="width: {{ forloop.index | times: 6 | plus: 70 }}%"></span></div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+layout: default
+title: Writing
+description: Notes on building backends — Python, FastAPI, reliability, and engineering practice.
+permalink: /blog/
+---
+
+<div class="page-wrap">
+  <h1>Writing</h1>
+  <p class="lead">Notes on backend architecture, reliability, and engineering practice.</p>
+
+  {% if site.posts.size > 0 %}
+    <div class="post-list">
+      {% for post in site.posts %}
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="lead">No posts yet — first one is on the way.</p>
+  {% endif %}
+</div>

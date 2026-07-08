@@ -1,0 +1,52 @@
+<section class="window window--files" id="win-projects" data-window="projects"
+         role="dialog" aria-label="Projects" hidden>
+  <header class="win-titlebar" data-drag-handle>
+    <div class="win-title">{% include appicons.html name="files" %}<span>Projects — Files</span></div>
+    <div class="win-controls">
+      <button class="win-btn win-min" data-win-action="minimize" aria-label="Minimize"></button>
+      <button class="win-btn win-max" data-win-action="maximize" aria-label="Maximize"></button>
+      <button class="win-btn win-close" data-win-action="close" aria-label="Close"></button>
+    </div>
+  </header>
+  <div class="win-body files-body">
+    <aside class="files-sidebar">
+      <div class="files-side-item active">{% include appicons.html name="folder-mini" %} Projects</div>
+      <div class="files-side-item">{% include appicons.html name="folder-mini" %} Recent</div>
+      <div class="files-side-item">{% include appicons.html name="folder-mini" %} Starred</div>
+      <div class="files-side-sep"></div>
+      <a class="files-side-item" href="https://github.com/samchawla" target="_blank" rel="noopener">{% include appicons.html name="folder-mini" %} GitHub</a>
+    </aside>
+    <div class="files-main">
+      <div class="files-pathbar">
+        <span class="crumb">Home</span><span class="crumb-sep">/</span><span class="crumb active">Projects</span>
+        <span class="files-count">{{ site.data.projects | where: 'featured', true | size }} items</span>
+      </div>
+      <div class="files-grid">
+        {% for project in site.data.projects %}{% if project.featured %}
+        <article class="file-card">
+          <div class="file-card-head">
+            {% include appicons.html name="file-mini" %}
+            <h3>{{ project.name }}</h3>
+          </div>
+          <p class="file-blurb">{{ project.blurb }}</p>
+          {% if project.metric and project.metric != "" %}
+            <p class="file-metric">$ {{ project.metric }}</p>
+          {% endif %}
+          {% if project.stack %}
+          <ul class="file-stack">
+            {% for tech in project.stack %}<li>{{ tech }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+          {% if project.links %}
+          <div class="file-links">
+            {% if project.links.demo and project.links.demo != "" %}<a href="{{ project.links.demo }}" target="_blank" rel="noopener">Live ↗</a>{% endif %}
+            {% if project.links.code and project.links.code != "" %}<a href="{{ project.links.code }}" target="_blank" rel="noopener">Code ↗</a>{% endif %}
+            {% if project.links.writeup and project.links.writeup != "" %}<a href="{{ project.links.writeup }}" target="_blank" rel="noopener">Write-up ↗</a>{% endif %}
+          </div>
+          {% endif %}
+        </article>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

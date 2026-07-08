@@ -1,0 +1,56 @@
+<nav class="dock" aria-label="Application dock">
+  <ul class="dock-list">
+    <li>
+      <button class="dock-item" data-open="terminal" aria-label="Terminal" data-tip="Terminal">
+        {% include appicons.html name="terminal" %}<span class="run-dot"></span>
+      </button>
+    </li>
+    <li>
+      <button class="dock-item" data-open="about" aria-label="About Me" data-tip="About Me">
+        {% include appicons.html name="about" %}<span class="run-dot"></span>
+      </button>
+    </li>
+    <li>
+      <button class="dock-item" data-open="projects" aria-label="Projects" data-tip="Projects">
+        {% include appicons.html name="files" %}<span class="run-dot"></span>
+      </button>
+    </li>
+    <li>
+      <button class="dock-item" data-open="experience" aria-label="Experience" data-tip="Experience">
+        {% include appicons.html name="experience" %}<span class="run-dot"></span>
+      </button>
+    </li>
+    <li>
+      <button class="dock-item" data-open="skills" aria-label="Skills" data-tip="Skills">
+        {% include appicons.html name="skills" %}<span class="run-dot"></span>
+      </button>
+    </li>
+    <li>
+      <button class="dock-item" data-open="contact" aria-label="Contact" data-tip="Contact">
+        {% include appicons.html name="contact" %}<span class="run-dot"></span>
+      </button>
+    </li>
+    <li class="dock-sep" aria-hidden="true"></li>
+    <li>
+      <a class="dock-item" href="{{ '/blog/' | relative_url }}" aria-label="Writing (blog)" data-tip="Writing">
+        {% include appicons.html name="writing" %}
+      </a>
+    </li>
+    <li>
+      <a class="dock-item" href="https://github.com/samchawla" target="_blank" rel="noopener" aria-label="GitHub" data-tip="GitHub">
+        {% include appicons.html name="github" %}
+      </a>
+    </li>
+    <li>
+      <a class="dock-item" href="https://www.linkedin.com/in/sumit-s-chawla" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn">
+        {% include appicons.html name="linkedin" %}
+      </a>
+    </li>
+    <li class="dock-sep" aria-hidden="true"></li>
+    <li>
+      <button class="dock-item" data-open="trash" aria-label="Trash" data-tip="Trash">
+        {% include appicons.html name="trash" %}
+      </button>
+    </li>
+  </ul>
+</nav>

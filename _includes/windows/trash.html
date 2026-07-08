@@ -1,0 +1,19 @@
+<section class="window window--trash" id="win-trash" data-window="trash"
+         role="dialog" aria-label="Trash" hidden>
+  <header class="win-titlebar" data-drag-handle>
+    <div class="win-title">{% include appicons.html name="trash" %}<span>Trash — Files</span></div>
+    <div class="win-controls">
+      <button class="win-btn win-min" data-win-action="minimize" aria-label="Minimize"></button>
+      <button class="win-btn win-max" data-win-action="maximize" aria-label="Maximize"></button>
+      <button class="win-btn win-close" data-win-action="close" aria-label="Close"></button>
+    </div>
+  </header>
+  <div class="win-body trash-body">
+    <div class="trash-empty">
+      {% include appicons.html name="trash" %}
+      <h3>Trash is empty</h3>
+      <p>No regrets, no legacy code, no missed deadlines in here.</p>
+      <p class="trash-hint">…okay, maybe one <code>TODO: refactor later</code>.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+# Social / contact links. `icon` maps to an inline SVG in _includes/footer.html
+# and _includes/header.html (email, linkedin, github supported out of the box).
+- label: Email
+  url: mailto:sam.chawla26@gmail.com
+  icon: email
+- label: LinkedIn
+  url: https://www.linkedin.com/in/sumit-s-chawla
+  icon: linkedin
+- label: GitHub
+  url: https://github.com/samchawla
+  icon: github

@@ -1,0 +1,38 @@
+<section class="window window--experience" id="win-experience" data-window="experience"
+         role="dialog" aria-label="Experience" hidden>
+  <header class="win-titlebar" data-drag-handle>
+    <div class="win-title">{% include appicons.html name="experience" %}<span>experience — Career History</span></div>
+    <div class="win-controls">
+      <button class="win-btn win-min" data-win-action="minimize" aria-label="Minimize"></button>
+      <button class="win-btn win-max" data-win-action="maximize" aria-label="Maximize"></button>
+      <button class="win-btn win-close" data-win-action="close" aria-label="Close"></button>
+    </div>
+  </header>
+  <div class="win-body exp-body">
+    <ol class="exp-timeline">
+      {% for job in site.data.experience %}
+      <li class="exp-item">
+        <span class="exp-dot" aria-hidden="true"></span>
+        <div class="exp-card">
+          <div class="exp-top">
+            <h3>{{ job.role }}</h3>
+            <span class="exp-dates">{{ job.start }} – {{ job.end }}</span>
+          </div>
+          <p class="exp-org">{{ job.org }}{% if job.location %} · {{ job.location }}{% endif %}</p>
+          {% if job.bullets %}
+          <ul class="exp-bullets">
+            {% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="exp-edu">
+      <h4>Education</h4>
+      {% for edu in site.data.education %}
+        <p class="exp-edu-row"><span>{{ edu.credential }}</span> <em>{{ edu.org }} · {{ edu.period }}</em></p>
+      {% endfor %}
+    </div>
+  </div>
+</section>

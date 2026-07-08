@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body class="ubuntu-desktop">
+  <a class="skip-link" href="#windows">Skip to content</a>
+
+  {% include desktop/boot.html %}
+  {% include desktop/topbar.html %}
+  {% include desktop/dock.html %}
+
+  <main class="desktop" id="desktop" role="main">
+    {% include desktop/icons.html %}
+
+    <div class="windows" id="windows">
+      {% include windows/terminal.html %}
+      {% include windows/about.html %}
+      {% include windows/projects.html %}
+      {% include windows/experience.html %}
+      {% include windows/skills.html %}
+      {% include windows/contact.html %}
+      {% include windows/trash.html %}
+    </div>
+
+    <p class="desktop-hint" id="desktop-hint">
+      Double-click an icon, tap the dock, or type <code>help</code> in the terminal.
+    </p>
+  </main>
+
+  <script id="site-data" type="application/json">
+  {
+    "profile": {{ site.data.profile | jsonify }},
+    "projects": {{ site.data.projects | jsonify }},
+    "experience": {{ site.data.experience | jsonify }},
+    "skills": {{ site.data.skills | jsonify }},
+    "social": {{ site.data.social | jsonify }}
+  }
+  </script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<section class="window window--contact" id="win-contact" data-window="contact"
+         role="dialog" aria-label="Contact" hidden>
+  <header class="win-titlebar" data-drag-handle>
+    <div class="win-title">{% include appicons.html name="contact" %}<span>New Message — Mail</span></div>
+    <div class="win-controls">
+      <button class="win-btn win-min" data-win-action="minimize" aria-label="Minimize"></button>
+      <button class="win-btn win-max" data-win-action="maximize" aria-label="Maximize"></button>
+      <button class="win-btn win-close" data-win-action="close" aria-label="Close"></button>
+    </div>
+  </header>
+  <div class="win-body contact-body">
+    <form class="mail-form" data-mail-form
+          data-to="{{ site.author.email }}">
+      <div class="mail-row"><label>To</label><input type="text" value="{{ site.author.email }}" readonly></div>
+      <div class="mail-row"><label>From</label><input type="email" name="from" placeholder="you@company.com" autocomplete="email"></div>
+      <div class="mail-row"><label>Subject</label><input type="text" name="subject" value="Let's work together" ></div>
+      <div class="mail-row mail-row--area">
+        <textarea name="body" rows="6" placeholder="Hi Sumit, we're building…"></textarea>
+      </div>
+      <div class="mail-actions">
+        <button type="submit" class="ubtn ubtn--primary">Send ↗</button>
+        <span class="mail-note">Opens your email app</span>
+      </div>
+    </form>
+    <div class="contact-links">
+      {% for s in site.data.social %}
+        <a href="{{ s.url }}" {% unless s.url contains 'mailto:' %}target="_blank" rel="noopener"{% endunless %}>
+          {% include appicons.html name=s.icon %}<span>{{ s.label }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

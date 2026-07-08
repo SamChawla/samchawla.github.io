@@ -1,0 +1,30 @@
+<div class="topbar" role="menubar" aria-label="System bar">
+  <button class="topbar-item activities" data-action="show-apps" aria-label="Activities">
+    {% include appicons.html name="grid" %}<span>Activities</span>
+  </button>
+
+  <button class="topbar-item topbar-clock" data-action="none" aria-label="Date and time">
+    <span id="clock-day">—</span>&nbsp;<span id="clock-time">--:--</span>
+  </button>
+
+  <div class="topbar-tray">
+    <button class="topbar-item tray-status" data-action="toggle-menu" aria-label="System status">
+      {% include appicons.html name="wifi" %}
+      {% include appicons.html name="volume" %}
+      {% include appicons.html name="battery" %}
+      {% include appicons.html name="chevron" %}
+    </button>
+
+    <div class="status-menu" id="status-menu" hidden>
+      <div class="status-row"><span>{% include appicons.html name="wifi" %} Wi-Fi</span><span>Connected</span></div>
+      <div class="status-row"><span>{% include appicons.html name="volume" %} Volume</span><span>78%</span></div>
+      <div class="status-row"><span>{% include appicons.html name="battery" %} Battery</span><span>100%</span></div>
+      <div class="status-sep"></div>
+      <div class="status-actions">
+        <a class="status-btn" href="{{ '/blog/' | relative_url }}">Blog</a>
+        <button class="status-btn" data-action="restart">Restart demo</button>
+        <a class="status-btn power" href="https://www.linkedin.com/in/sumit-s-chawla" target="_blank" rel="noopener">{% include appicons.html name="power" %} Hire me</a>
+      </div>
+    </div>
+  </div>
+</div>

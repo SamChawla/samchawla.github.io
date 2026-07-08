@@ -1,0 +1,16 @@
+# Skills grouped by area — rendered as cards.
+- group: Languages & Frameworks
+  detail: Python, FastAPI, Django, Flask, REST & async services
+  items: [Microservices, OpenAPI, Async I/O]
+
+- group: Platform & Data
+  detail: Azure SQL, storage services, API integrations, analytics-ready data
+  items: [SQL, Caching, Observability]
+
+- group: Delivery & Quality
+  detail: CI/CD, PyTest, containerization, release gates, maintainable docs
+  items: [Docker, Kubernetes, API Docs]
+
+- group: Leadership
+  detail: Mentorship, architecture reviews, standards, stakeholder alignment
+  items: [Mentorship, Design Reviews, Roadmaps]

@@ -1,0 +1,24 @@
+{% assign u = site.data.profile.username | default: 'sam' %}
+{% assign h = site.data.profile.host | default: 'portfolio' %}
+<section class="window window--terminal" id="win-terminal" data-window="terminal"
+         role="dialog" aria-label="Terminal" hidden>
+  <header class="win-titlebar win-titlebar--dark" data-drag-handle>
+    <div class="win-title">
+      {% include appicons.html name="terminal" %}
+      <span>{{ u }}@{{ h }}: ~</span>
+    </div>
+    <div class="win-controls">
+      <button class="win-btn win-min" data-win-action="minimize" aria-label="Minimize"></button>
+      <button class="win-btn win-max" data-win-action="maximize" aria-label="Maximize"></button>
+      <button class="win-btn win-close" data-win-action="close" aria-label="Close"></button>
+    </div>
+  </header>
+  <div class="win-body term-body" data-terminal>
+    <div class="term-output" id="term-output"></div>
+    <div class="term-inputline">
+      <span class="term-prompt"><span class="term-user">{{ u }}@{{ h }}</span>:<span class="term-path">~</span>$</span>
+      <span class="term-input" id="term-input" role="textbox" contenteditable="true" spellcheck="false" aria-label="Terminal input"></span>
+      <span class="term-caret" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>

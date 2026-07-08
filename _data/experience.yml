@@ -1,0 +1,50 @@
+# Work history — rendered as a timeline, top (newest) first.
+- role: Technical Lead
+  org: Confidential
+  location: Remote
+  start: May 2024
+  end: Present
+  summary: Leading backend architecture and modernization.
+  bullets:
+    - Own FastAPI-based platforms, service boundaries, and observability strategy.
+    - Establish development workflows that support reliable, scalable growth.
+
+- role: Consultant / Senior Python Developer
+  org: Consulting
+  location: Indore
+  start: Jan 2024
+  end: May 2024
+  summary: Shipping REST products with tight feedback loops.
+  bullets:
+    - Partnered with UI teams to deliver documented APIs and rapid iterations.
+    - Made implementation choices grounded in product needs.
+
+- role: Senior Solution Engineer
+  org: Enterprise Software
+  location: Indore
+  start: Jan 2021
+  end: Jan 2024
+  summary: Enterprise-grade Python systems.
+  bullets:
+    - Built Django, FastAPI, and Flask services; containerized workloads.
+    - Introduced CI/CD and microservice patterns for production environments.
+
+- role: Associate Software Engineer
+  org: Software Services
+  location: Indore
+  start: Nov 2018
+  end: Jan 2021
+  summary: Reliability, testing, and secure deployment.
+  bullets:
+    - Contributed across the SDLC with TDD and AWS deployments.
+    - Set up monitoring and data-design practices for stable releases.
+
+- role: Junior Software Developer
+  org: Technology Services
+  location: Mumbai
+  start: Aug 2017
+  end: Oct 2018
+  summary: Machine learning data preparation.
+  bullets:
+    - Built preprocessing workflows and product-classification pipelines.
+    - Improved downstream model readiness and consistency.

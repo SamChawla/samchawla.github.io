@@ -1,0 +1,45 @@
+# ============================================================================
+# PROJECTS  —  the most important section of the site.
+#
+#   REPLACE the placeholders below with 3–5 REAL projects.
+#   The single most valuable field is `metric`: a measurable outcome.
+#   e.g.  "Cut API p95 latency 800ms → 120ms"  beats  "improved performance".
+#
+# Fields:
+#   name    : project / product name
+#   blurb   : one line — what it is and why it mattered
+#   metric  : the measurable result (the line recruiters remember)
+#   stack   : list of technologies
+#   links   : any of demo / code / writeup; empty ones are hidden automatically
+#   featured: true to surface it (all featured items render, newest first)
+# ============================================================================
+
+- name: "Realtime Analytics API"            # REPLACE
+  blurb: "FastAPI service powering dashboards over high-volume event data."
+  metric: "Cut p95 latency 800ms → 120ms"   # REPLACE with your real number
+  stack: [Python, FastAPI, PostgreSQL, Redis, Kubernetes]
+  links:
+    demo: ""
+    code: ""
+    writeup: ""
+  featured: true
+
+- name: "Multi-tenant Platform APIs"        # REPLACE
+  blurb: "Auth, tenancy, and service boundaries for a growing SaaS product."
+  metric: "Onboarded 40+ tenants with zero-downtime releases"  # REPLACE
+  stack: [Python, FastAPI, Docker, Azure SQL, OpenAPI]
+  links:
+    demo: ""
+    code: ""
+    writeup: ""
+  featured: true
+
+- name: "Delivery Pipeline Modernization"   # REPLACE
+  blurb: "CI/CD and containerization overhaul for a legacy monolith."
+  metric: "Reduced deploy time 45m → 6m; rollbacks in one click"  # REPLACE
+  stack: [Docker, Kubernetes, GitHub Actions, PyTest]
+  links:
+    demo: ""
+    code: ""
+    writeup: ""
+  featured: true
