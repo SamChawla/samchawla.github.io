@@ -302,21 +302,18 @@
         return;
       }
 
-      var art =
-        '        .-/+oossssoo+/-.\n' +
-        '    `:+ssssssssssssssssss+:`\n' +
-        '  -+ssssssssssssssssssyyssss+-\n' +
-        ' .osssssssssssssssssssdMMMNysssso.\n' +
-        ' +sssssssssshdmmNNmmyNMMMMhssssss+\n' +
-        'ossyNMMMNyMMhsssssssssssssshmmmhsss.\n' +
-        '+sssshhhyNMMNyssssssssssssssssyNMMMy\n' +
-        '.sssssssssdMMMNysssssssssssssshNMMMds.\n' +
-        ' +sssssssssdmydMMMMMMMMddddyssssssss+\n' +
-        '  -+sssssssssssssssssyyyyssssssss+-\n' +
-        '    `:+ssssssssssssssssss+:`\n' +
-        '        .-/+oossssoo+/-.';
+      var art = [
+        ' ___ _   _ __  __ ___ _____',
+        '/ __| | | |  \\/  |_ _|_   _|',
+        '\\__ \\ |_| | |\\/| || |  | |',
+        '|___/\\___/|_|  |_|___| |_|',
+        '  ___ _  _   ___      ___      _',
+        ' / __| || | /_\\ \\    / / |    /_\\',
+        '| (__| __ |/ _ \\ \\/\\/ /| |__ / _ \\',
+        ' \\___|_||_/_/ \\_\\_/\\_/ |____/_/ \\_\\'
+      ].join('\n');
 
-      print('<div class="nf"><pre class="nf-logo">' + art + '</pre>' +
+      print('<div class="nf"><pre class="nf-logo nf-logo--name">' + art + '</pre>' +
             '<div class="nf-info">' + infoHead + facts + '</div></div>');
     },
     ls: function () {
